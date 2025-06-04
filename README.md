@@ -1,8 +1,79 @@
-# React + Vite
+# 📋 My PasteCode
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**My PasteCode** is a simple and elegant web application built with **React** and styled using **Bootstrap**, designed to let users paste, save, and share code snippets easily.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Live Demo
+
+🔗 [View Live Demo](https://vaibhavvi.github.io/PasteCode/)
+---
+
+## 🚀 Features
+
+- 📝 Create and paste code snippets
+- 💾 Save snippets locally or to a server (if backend connected)
+- 📤 Share snippets via URL (planned or implemented if applicable)
+- 🎨 Responsive UI using Bootstrap
+
+---
+
+## 🛠 Tech Stack
+
+- **React** – Frontend library for building UI components
+- **Bootstrap** – CSS framework for responsive design
+
+---
+
+## 📦 Installation
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/yourusername/my-pastecode.git
+   cd my-pastecode
+   ```
+
+2. **Install dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server:**
+
+   ```bash
+   npm start
+   ```
+
+   The app will be available at `http://localhost:3000`.
+
+---
+
+## 🔧 Customization
+
+You can customize:
+
+- Theme and layout via Bootstrap
+- Code syntax highlighting (using Prism.js or Highlight.js)
+- Backend integration for persistent storage
+
+---
+
+## 📌 Future Improvements
+
+- User authentication
+- Syntax highlighting
+- Tagging and categorization
+- Dark mode
+
+---
+
+## 🙋‍♂️ Made By Vaibhav Dubey
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to open issues or submit pull requests.
+
