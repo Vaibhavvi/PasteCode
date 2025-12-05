@@ -1,7 +1,9 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+// vite.config.js
+import { defineConfig } from 'vite';
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
-})
+  base: '/PasteCode/', // Update this with the name of your GitHub repository
+  build: {
+    outDir: 'dist', // Ensure the build output goes into the 'dist' folder
+  },
+});

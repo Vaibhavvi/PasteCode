@@ -1,0 +1,42 @@
+/* ============================================
+   GLASS CARD (Light + Dark Theme)
+============================================ */
+.glass-card-2 {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 18px;
+  padding: 25px;
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 8px 35px rgba(0, 0, 0, 0.18);
+  position: relative;
+  overflow: hidden;
+  transition: 0.35s ease;
+}
+
+/* DARK MODE CARD */
+body.dark-screen .glass-card-2 {
+  background: rgba(22, 22, 22, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 40px rgba(0, 255, 255, 0.12);
+}
+
+/* Glow border animation */
+.glass-card-2::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, #ff7eb3, #65d2ff, #7b5bff);
+  z-index: -1;
+  filter: blur(28px);
+  opacity: 0.18;
+  transition: 0.3s ease;
+}
+
+/* DARK MODE GLOW COLORS */
+body.dark-screen .glass-card-2::before {
+  background: linear-gradient(135deg, #00ffe7, #00aaff, #b400ff);
+  opacity: 0.25;
+}

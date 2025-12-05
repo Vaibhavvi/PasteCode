@@ -3,3 +3,19 @@
   padding:0;
   box-sizing: border-box;
 }
+/* Light screen mode */
+body.light-screen {
+  background-color: #ffffff;
+  color: #000;
+}
+
+/* Dark screen mode */
+body.dark-screen {
+  background-color: #121212;
+  color: #fff;
+}
+
+/* Smooth transition */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

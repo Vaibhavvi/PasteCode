@@ -1,0 +1,84 @@
+/* Dark Mode Background */
+.dark-screen {
+  background: linear-gradient(135deg, #0a0a0a, #121212, #000000);
+  min-height: 100vh;
+  color: white;
+  transition: 0.3s ease-in-out;
+}
+
+/* Modern Navbar Wrapper */
+.modern-nav {
+  padding: 12px 0;
+  backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Flex Layout */
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Brand Name */
+.brand {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.brand-glow {
+  color: #00eaff;
+  text-shadow: 0 0 12px #00eaff;
+}
+
+/* Navbar Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 25px;
+}
+
+/* Modern Nav Link */
+.nav-link-modern {
+  color: #ddd;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  position: relative;
+  transition: 0.25s ease;
+}
+
+/* Hover neon glow */
+.nav-link-modern:hover {
+  color: #00eaff;
+  text-shadow: 0 0 10px #00eaff;
+}
+
+/* Underline Animation */
+.nav-link-modern::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 0%;
+  background: #00eaff;
+  transition: 0.3s ease;
+  box-shadow: 0 0 8px #00eaff;
+}
+
+.nav-link-modern:hover::after {
+  width: 100%;
+}

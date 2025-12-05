@@ -1,0 +1,49 @@
+/* Main Footer Container */
+.footer-modern {
+  padding: 18px 0;
+  text-align: center;
+  width: 100%;
+  margin-top: 40px;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 -3px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Dark Screen Mode Support */
+body.dark-screen .footer-modern {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Footer Text Styling */
+.footer-text {
+  font-size: 17px;
+  margin: 0;
+  color: #fff;
+  letter-spacing: .5px;
+}
+
+/* Gradient Name */
+.footer-text .name {
+  background: linear-gradient(135deg, #00eaff, #007bff, #9b00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+/* Social Icons */
+.footer-icons a {
+  font-size: 24px;
+  margin: 0 10px;
+  color: #ffffff;
+  opacity: 0.8;
+  transition: 0.3s ease-in-out;
+}
+
+/* Hover Animation */
+.footer-icons a:hover {
+  opacity: 1;
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 8px #00eaff);
+}
