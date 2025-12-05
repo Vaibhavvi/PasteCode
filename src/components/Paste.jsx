@@ -2,41 +2,40 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Resetpaste } from "../redux/pasteSlice";
-
+import "./Paste.css"; // We'll create this CSS
 
 const Paste = () => {
   const dispatch = useDispatch();
+  const pastes = useSelector(state => state.paste.pastes);
 
   const handleReset = () => {
-    dispatch(Resetpaste()); // Dispatch the action to reset pastes
+    dispatch(Resetpaste());
   };
 
-  const pastes = useSelector(state => state.paste.pastes); // Select pastes from the Redux store
-
   return (
-    <div style={{ padding: '15px', backgroundColor: 'gray', margin: '20px', borderRadius: '4px' }}>
-      <h3>Your past Paste ...</h3>
-      <li className="nav-item">
-        <button className="btn btn-danger" onClick={handleReset}>
+    <div className="paste-container">
+      <div className="paste-header">
+        <h3>Your Past Pastes</h3>
+        <button className="btn-reset" onClick={handleReset}>
           Reset All
         </button>
-      </li>
-      <br />
-      <ul className="list-group">
-        {pastes.length > 0 ? (
-          pastes.map(paste => (
-            <li key={paste.id} className="list-group-item">
-              <h5>{paste.title}</h5>
-              <p>{paste.content.slice(0, 100)}...</p>
-              <Link to={`/paste/${paste.id}`} className="btn btn-info btn-sm">
-                View and update paste
+      </div>
+
+      {pastes.length > 0 ? (
+        <div className="paste-list">
+          {pastes.map(paste => (
+            <div key={paste.id} className="glass-card-paste">
+              <h5 className="paste-title">{paste.title}</h5>
+              <p className="paste-content">{paste.content.slice(0, 150)}...</p>
+              <Link to={`/paste/${paste.id}`} className="btn-view">
+                View & Update
               </Link>
-            </li>
-          ))
-        ) : (
-          <p>No pastes available.</p>
-        )}
-      </ul>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <p className="no-paste">No pastes available.</p>
+      )}
     </div>
   );
 };

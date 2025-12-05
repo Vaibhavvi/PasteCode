@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { Updatepaste, Removefrompaste } from '../redux/pasteSlice';
 import toast from 'react-hot-toast';
+import './ViewPaste.css';
 
 const ViewPaste = () => {
   const { id } = useParams();
@@ -39,47 +40,55 @@ const ViewPaste = () => {
     navigate('/');
   };
 
-  if (!paste) return <p>Loading...</p>;
+  if (!paste) return <p className="loading-text">Loading...</p>;
 
   return (
-    <div className="container mt-4" style={{padding:'15px',borderRadius:'4px',backgroundColor:'gray', margin:'20px'}}>
-      <h2>{isEditing ? 'Edit Paste' : 'View Paste'}</h2>
-      <div className="mb-3">
-        {isEditing ? (
-          <input
-            type="text"
-            className="form-control"
-            value={updatedTitle}
-            onChange={(e) => setUpdatedTitle(e.target.value)}
-          />
-        ) : (
-          <h4>{paste.title}</h4>
-        )}
-      </div>
-      <div className="mb-3">
-        {isEditing ? (
-          <textarea
-            className="form-control"
-            rows="6"
-            value={updatedContent}
-            onChange={(e) => setUpdatedContent(e.target.value)}
-          />
-        ) : (
-          <p>{paste.content}</p>
-        )}
-      </div>
+    <div className="viewpaste-container">
+      <div className="glass-card-view">
+        <h2>{isEditing ? 'Edit Paste' : 'View Paste'}</h2>
 
-      {isEditing ? (
-        <div>
-          <button className="btn btn-success" onClick={handleUpdate}>Save Changes</button>
-          <button className="btn btn-secondary" onClick={() => setIsEditing(false)}>Cancel</button>
+        <div className="mb-3">
+          {isEditing ? (
+            <input
+              type="text"
+              className="modern-input-view"
+              value={updatedTitle}
+              onChange={(e) => setUpdatedTitle(e.target.value)}
+              placeholder="Enter title"
+            />
+          ) : (
+            <h4 className="paste-title-view">{paste.title}</h4>
+          )}
         </div>
-      ) : (
-        <div>
-          <button className="btn btn-info " onClick={() => setIsEditing(true)}>Update Paste</button>
-          <button className="btn btn-danger" onClick={handleDelete}>Delete Paste</button>
+
+        <div className="mb-3">
+          {isEditing ? (
+            <textarea
+              className="modern-input-view"
+              rows="6"
+              value={updatedContent}
+              onChange={(e) => setUpdatedContent(e.target.value)}
+              placeholder="Enter content"
+            />
+          ) : (
+            <p className="paste-content-view">{paste.content}</p>
+          )}
         </div>
-      )}
+
+        <div className="button-group-view">
+          {isEditing ? (
+            <>
+              <button className="btn-save" onClick={handleUpdate}>💾 Save Changes</button>
+              <button className="btn-cancel" onClick={() => setIsEditing(false)}>✖ Cancel</button>
+            </>
+          ) : (
+            <>
+              <button className="btn-edit" onClick={() => setIsEditing(true)}>✏ Update Paste</button>
+              <button className="btn-delete" onClick={handleDelete}>🗑 Delete Paste</button>
+            </>
+          )}
+        </div>
+      </div>
     </div>
   );
 };

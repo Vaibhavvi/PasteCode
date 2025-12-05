@@ -1,0 +1,96 @@
+/* Container */
+.paste-container {
+  padding: 20px;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Header with Reset Button */
+.paste-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-reset {
+  background: #ff4d6d;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 0 12px rgba(255, 77, 109, 0.6);
+}
+
+.btn-reset:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 77, 109, 0.9);
+}
+
+/* Glass Card for each paste */
+.glass-card-paste {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 18px;
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: 0.3s ease;
+}
+
+body.dark-screen .glass-card-paste {
+  background: rgba(22, 22, 22, 0.45);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 25px rgba(0, 255, 255, 0.12);
+}
+
+.glass-card-paste:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(0, 234, 255, 0.25);
+}
+
+/* Paste Title & Content */
+.paste-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #00eaff;
+}
+
+.paste-content {
+  font-size: 15px;
+  color: #ddd;
+  line-height: 1.4;
+}
+
+/* View Button */
+.btn-view {
+  align-self: flex-start;
+  padding: 8px 16px;
+  background: #00eaff;
+  color: #000;
+  font-weight: 500;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  box-shadow: 0 0 10px #00eaff;
+}
+
+.btn-view:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00eaff;
+}
+
+/* No Pastes Text */
+.no-paste {
+  font-size: 16px;
+  color: #bbb;
+  text-align: center;
+  margin-top: 40px;
+}
